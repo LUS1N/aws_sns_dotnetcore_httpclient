@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aws_sns_dotnetcore_httpclient", "aws_sns_dotnetcore_httpclient\aws_sns_dotnetcore_httpclient.csproj", "{FB69ABE2-2E1C-4078-AC34-826B95318AE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aws_sns_dotnetcore_httpclient.Tests", "aws_sns_dotnetcore_httpclient.Tests\aws_sns_dotnetcore_httpclient.Tests.csproj", "{7B5AA0BD-0FDE-4D3D-9AEC-FC490B50DA78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB69ABE2-2E1C-4078-AC34-826B95318AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB69ABE2-2E1C-4078-AC34-826B95318AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB69ABE2-2E1C-4078-AC34-826B95318AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB69ABE2-2E1C-4078-AC34-826B95318AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5AA0BD-0FDE-4D3D-9AEC-FC490B50DA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5AA0BD-0FDE-4D3D-9AEC-FC490B50DA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5AA0BD-0FDE-4D3D-9AEC-FC490B50DA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5AA0BD-0FDE-4D3D-9AEC-FC490B50DA78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
