@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Net.Http.Headers;
 
 namespace aws_sns_dotnetcore_httpclient
 {
@@ -30,7 +32,25 @@ namespace aws_sns_dotnetcore_httpclient
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(config =>
+            {
+                // AWS SNS sends the request with content-type: text/plain
+                // Even though the body is in JSON
+                // Here we go through each input formatter
+                foreach (var formatter in config.InputFormatters)
+                {   
+                    // and if it's the JSON formatter
+                    if (formatter.GetType() != typeof(JsonInputFormatter)) continue;
+
+                    // add another supported media type "text/plain"
+                    // so that incoming requests with this type, will also be processed as JSON
+                    ((JsonInputFormatter)formatter).SupportedMediaTypes.Add(
+                        MediaTypeHeaderValue.Parse("text/plain"));
+
+                    // break the loop because there's no need to keep going through other formatters
+                    break;
+                }
+            });
 
             // Pull in any SDK configuration from Configuration object
             services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
