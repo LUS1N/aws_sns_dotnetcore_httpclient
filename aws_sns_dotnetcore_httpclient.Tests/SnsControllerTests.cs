@@ -1,25 +1,18 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 using Xunit;
-using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
 using Amazon.Lambda.APIGatewayEvents;
 
 using Newtonsoft.Json;
 
-using aws_sns_dotnetcore_httpclient;
 
 
 namespace aws_sns_dotnetcore_httpclient.Tests
 {
-    public class ValuesControllerTests
+    public class SnsControllerTests
     {
-
-
         [Fact]
         public async Task TestGet()
         {
@@ -35,7 +28,6 @@ namespace aws_sns_dotnetcore_httpclient.Tests
             Assert.True(response.Headers.ContainsKey("Content-Type"));
             Assert.Equal("application/json; charset=utf-8", response.Headers["Content-Type"]);
         }
-
 
     }
 }
